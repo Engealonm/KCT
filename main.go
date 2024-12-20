@@ -7,56 +7,49 @@ import (
 	"net/http"
 )
 
-// Response структура для формирования JSON-ответа
 type Response struct {
 	Status  string `json:"status"`
 	Message string `json:"message"`
 }
 
-// Request структура для парсинга JSON-запроса
-type Request struct {
-	Message string `json:"message"`
-}
-
-// handler функция для обработки запросов
-func handler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost && r.Method != http.MethodGet {
+func apiHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		json.NewEncoder(w).Encode(Response{
 			Status:  "fail",
-			Message: "Метод не поддерживается",
+			Message: "Method not allowed",
 		})
 		return
 	}
 
-	var req Request
+	var req map[string]string
 	err := json.NewDecoder(r.Body).Decode(&req)
-	if err != nil || req.Message == "" {
+	if err != nil || req["message"] == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(Response{
 			Status:  "fail",
-			Message: "Некорректное JSON-сообщение",
+			Message: "Invalid JSON payload",
 		})
 		return
 	}
 
-	// Логируем полученное сообщение
-	fmt.Printf("Сообщение от клиента: %s\n", req.Message)
+	fmt.Printf("Message from client: %s\n", req["message"])
 
-	// Отправляем успешный ответ
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(Response{
 		Status:  "success",
-		Message: "Данные успешно приняты",
+		Message: "Data received successfully",
 	})
 }
 
 func main() {
-	// Установка маршрутов
-	http.HandleFunc("/", handler)
+	// Настройка маршрутов
+	http.Handle("/", http.FileServer(http.Dir("./static"))) // Обслуживание статических файлов
+	http.HandleFunc("/api", apiHandler)                     // API для обработки POST-запросов
 
 	// Запуск сервера
 	port := "8080"
 	fmt.Printf("Сервер запущен на порту %s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
+
 }
