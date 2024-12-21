@@ -52,6 +52,7 @@ body{
   margin-right: 50px;
 }
 
+
 .login{
   display: flex;
   background-color: #14FFEC;
@@ -59,12 +60,22 @@ body{
   border-radius: 20px;
 }
 
+
 .signin{
   display: flex;
   background-color: #0D7377;
   padding: 5px 11px;
   border-radius: 20px;
   margin-left: 10px;
+}
+
+.signin a{
+  text-decoration: dotted;
+}
+
+.login a{
+  text-decoration: none;
+  color: #323232;
 }
 
 .main{
@@ -110,3 +121,6 @@ body{
   border-radius: 70px;
 }
 
+.loginForm{
+color: black;
+}
