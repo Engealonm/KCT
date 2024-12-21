@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<title>KazCryptoToken</title>
+</head>
+<body>
+    <header class="header">
+		<div class="navbar">
+			<nav class="nav">
+				<ul>
+					<li>
+						<a href="index.html"><img style="height: 35px;" src="KCT.png"></a>
+					</li>
+					<li>
+						<a href="#">Buy crypto</a>
+					</li>
+					<li>
+						<a href="#">Markets</a>
+					</li>
+					<li>
+						<a href="#">Trade</a>
+					</li>
+					<li>
+						<a href="#">Earn</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="logs">
+				<div class="login"><a href="#">Log In</a></div>
+				<div class="signin"><a href="#">Sign In</a></div>
+			</div>
+		</div>
+	</header>
+
+    <div class="main">
+        <div class="m1">
+            <h2>Log in</h2>
+            <p style="font-size: 30px;">Or if you dont have account, <a>sign in</a>.</p>
+            <br>
+            <p style="font-size: 12px;"><span style="margin-right: 20px;"><a href="">Terms and conditions</a></span><a href="#">privacy and policy</a></p>
+        </div>
+        <div class="m2">
+            <div class="lg">
+                <div>
+                    <form id="loginForm" action="/login" method="POST">
+                        <input type="text" style="color: black;" name="username" id="username" placeholder="Username" required>
+                        <input type="password" style="color: black;" name="password" id="password" placeholder="Password" required>
+                        <button type="submit" style="color: black;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
