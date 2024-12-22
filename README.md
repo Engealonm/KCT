@@ -29,9 +29,4 @@ KCT aims to provide users with a secure and efficient platform for blockchain tr
 - **Testing**: Postman
 
 
-## Checklist
-- [x] Codebase includes all necessary files and folders.
-- [x] Screenshots and images are in the repository.
-- [x] Repository is set to public access.
-- [x] Instructions for setup and usage are complete.
 
