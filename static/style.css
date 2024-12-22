@@ -1,0 +1,127 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: ghostwhite;
+}
+body{
+  margin: 0px;
+  font-family: arial;
+  background-color: #323232;
+}
+
+.navbar{
+  display: flex;
+  background-color: #212121;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul{
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  
+}
+
+.nav ul li{
+  display: flex;
+  padding-right: 50px;
+  align-content: center;
+  align-items: center;
+}
+
+.nav ul a{
+  display: flex;
+  text-decoration: none;
+
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.logs{
+  display: flex;
+  margin-right: 50px;
+}
+
+
+.login{
+  display: flex;
+  background-color: #14FFEC;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+
+.signin{
+  display: flex;
+  background-color: #0D7377;
+  padding: 5px 11px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.signin a{
+  text-decoration: dotted;
+}
+
+.login a{
+  text-decoration: none;
+  color: #323232;
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
+}
+
+.m1{
+  margin-top: 170px;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 50px;
+  max-width: 100vh;
+  text-decoration: none;
+}
+
+.mainbtn{
+  display: flex;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+.buy a{
+  text-decoration: none;
+  border-radius: 100px;
+  background-color: #0D7377;
+  padding: 10px 25px;
+}
+
+.m2{
+  margin-top: 100px;
+  margin-right: 150px;
+  font-size: 50px;
+}
+
+.cryptotbl{
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.ct1{
+  background-color: #212121;
+  padding: 180px 250px;
+  border-radius: 70px;
+}
+
+.loginForm{
+color: black;
+}

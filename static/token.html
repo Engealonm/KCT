@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <title>KazCryptoToken</title>
+</head>
+<body>
+<header class="header">
+  <div class="navbar">
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="index.html"><img style="height: 35px;" src="KCT.png"></a>
+        </li>
+        <li>
+          <a href="#">Buy crypto</a>
+        </li>
+        <li>
+          <a href="#">Markets</a>
+        </li>
+        <li>
+          <a href="#">Trade</a>
+        </li>
+        <li>
+          <a href="#">Earn</a>
+        </li>
+        <li>
+          <a href="token.html">Token</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="logs">
+      <div class="login"><a href="loginpage.html">Log In</a></div>
+      <div class="signin"><a href="loginpage.html">Sign In</a></div>
+    </div>
+  </div>
+</header>
+
+<div style="margin-left: 100px" class="token_management">
+  <h2>Token Management</h2>
+  <form id="tokenForm">
+    <input type="text" style="color: black;" name="tokenName" id="tokenName" placeholder="Token Name" required>
+    <input type="number" style="color: black;" name="tokenAmount" id="tokenAmount" placeholder="Token Amount" required>
+    <button type="submit" style="color: black;" > Create Token</button>
+  </form>
+
+  <div id="tokenList">
+    <h3>Existing Tokens</h3>
+    <ul id="tokens">
+
+    </ul>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
