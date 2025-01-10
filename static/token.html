@@ -40,7 +40,7 @@
   </div>
 </header>
 
-<div style="margin-left: 100px" class="token_management">
+<div style="margin-left: 100px; margin-top: 60px"  class="token_management">
   <h2>Token Management</h2>
   <form id="tokenForm">
     <input type="text" style="color: black;" name="tokenName" id="tokenName" placeholder="Token Name" required>
@@ -50,10 +50,32 @@
 
   <div id="tokenList">
     <h3>Existing Tokens</h3>
+    <button id="sortAsc" style="color: black;" >Sort Ascending</button>
+    <button id="sortDesc" style="color: black;" >Sort Descending</button>
+
     <ul id="tokens">
 
     </ul>
   </div>
+  <div class="token_update">
+    <h2>Update Token</h2>
+    <form id="updateTokenForm">
+      <input type="text" style="color: black" id="updateTokenId" placeholder="Token ID" required>
+      <input type="text" style="color: black" id="updateTokenName" placeholder="Token Name" required>
+      <input type="number" style="color: black" id="updateTokenAmount" placeholder="Token Amount" required>
+      <button  type="submit" style="color: black">Update Token</button>
+    </form>
+  </div>
+  <div class="token_search">
+    <h2>Search token by ID</h2>
+    <form id="searchForm">
+      <input style="color: black" type="text" id="searchTokenId" placeholder="Enter Token ID" required>
+      <button style="color: black" type="submit">Search</button>
+    </form>
+    <div id="searchResult"></div>
+  </div>
+
+
 </div>
 
 <script src="script.js"></script>
