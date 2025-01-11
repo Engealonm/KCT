@@ -3,10 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css?v=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <title>KazCryptoToken</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1f25 0%, #242c37 100%);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #00f7ff;
+    }
+
+    .logs {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .login a, .signin a {
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .login a {
+      color: #ffffff;
+      border: 1px solid #00f7ff;
+    }
+
+    .signin a {
+      background: #00f7ff;
+      color: #1a1f25;
+    }
+
+    .login a:hover {
+      background: rgba(0, 247, 255, 0.1);
+    }
+
+    .signin a:hover {
+      background: #00d8df;
+    }
+
+    .token_management {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+    }
+
+    .filter-section label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: #00f7ff;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      color: #ffffff !important;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    button {
+      background: #00f7ff;
+      color: #1a1f25 !important;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00d8df;
+    }
+
+    #tokenList {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    #tokens {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    #tokens li {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #searchResult {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      min-height: 60px;
+      margin-bottom: 2rem;
+    }
+
+    .sort-buttons {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .token_management {
+        padding: 1rem;
+      }
+      .sendmail{
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 <header class="header">
@@ -14,22 +203,22 @@
     <nav class="nav">
       <ul>
         <li>
-          <a href="index.html"><img style="height: 35px;" src="KCT.png"></a>
+          <a href="index.html"><img style="height: 35px;" src="KCT.png" alt="KCT Logo"></a>
         </li>
         <li>
-          <a href="#">Buy crypto</a>
+          <a href="#"><i class="fas fa-coins"></i> Buy crypto</a>
         </li>
         <li>
-          <a href="#">Markets</a>
+          <a href="#"><i class="fas fa-chart-line"></i> Markets</a>
         </li>
         <li>
-          <a href="#">Trade</a>
+          <a href="#"><i class="fas fa-exchange-alt"></i> Trade</a>
         </li>
         <li>
-          <a href="#">Earn</a>
+          <a href="#"><i class="fas fa-hand-holding-usd"></i> Earn</a>
         </li>
         <li>
-          <a href="token.html">Token</a>
+          <a href="token.html"><i class="fas fa-token"></i> Token</a>
         </li>
       </ul>
     </nav>
@@ -39,45 +228,69 @@
     </div>
   </div>
 </header>
-
-<div style="margin-left: 100px; margin-top: 60px"  class="token_management">
-  <h2>Token Management</h2>
+<div class="token_management">
+  <h2><i class="fas fa-coins"></i> Token Management</h2>
   <form id="tokenForm">
-    <input type="text" style="color: black;" name="tokenName" id="tokenName" placeholder="Token Name" required>
-    <input type="number" style="color: black;" name="tokenAmount" id="tokenAmount" placeholder="Token Amount" required>
-    <button type="submit" style="color: black;" > Create Token</button>
+    <input type="text" name="tokenName" id="tokenName" placeholder="Token Name" required>
+    <input type="number" name="tokenAmount" id="tokenAmount" placeholder="Token Amount" required>
+    <button type="submit">Create Token</button>
   </form>
-
   <div id="tokenList">
     <h3>Existing Tokens</h3>
-    <button id="sortAsc" style="color: black;" >Sort Ascending</button>
-    <button id="sortDesc" style="color: black;" >Sort Descending</button>
-
-    <ul id="tokens">
-
-    </ul>
+    <br>
+    <form id="filterForm" class="filter-section">
+      <div class="form-group">
+        <label for="minAmount">Min Amount</label>
+        <input type="number" id="minAmount" name="minAmount" placeholder="Enter minimum amount">
+      </div>
+      <div class="form-group">
+        <label for="maxAmount">Max Amount</label>
+        <input type="number" id="maxAmount" name="maxAmount" placeholder="Enter maximum amount">
+      </div>
+      <button type="submit" id="applyFilter">Apply Filter</button>
+    </form>
+    <div class="sort-buttons">
+      <button id="sortAsc"><i class="fas fa-sort-amount-up"></i> Sort Ascending</button>
+      <button id="sortDesc"><i class="fas fa-sort-amount-down"></i> Sort Descending</button>
+    </div>
+    <ul id="tokens"></ul>
+    <div class="pagination">
+      <button id="prevPage">Previous</button>
+      <span id="pageInfo">Page 1 of 1</span>
+      <button id="nextPage">Next</button>
+    </div>
   </div>
   <div class="token_update">
-    <h2>Update Token</h2>
+    <h2><i class="fas fa-edit"></i> Update Token</h2>
     <form id="updateTokenForm">
-      <input type="text" style="color: black" id="updateTokenId" placeholder="Token ID" required>
-      <input type="text" style="color: black" id="updateTokenName" placeholder="Token Name" required>
-      <input type="number" style="color: black" id="updateTokenAmount" placeholder="Token Amount" required>
-      <button  type="submit" style="color: black">Update Token</button>
+      <input type="text" id="updateTokenId" placeholder="Token ID" required>
+      <input type="text" id="updateTokenName" placeholder="Token Name" required>
+      <input type="number" id="updateTokenAmount" placeholder="Token Amount" required>
+      <button type="submit">Update Token</button>
     </form>
   </div>
   <div class="token_search">
-    <h2>Search token by ID</h2>
+    <h2><i class="fas fa-search"></i> Search token by ID</h2>
     <form id="searchForm">
-      <input style="color: black" type="text" id="searchTokenId" placeholder="Enter Token ID" required>
-      <button style="color: black" type="submit">Search</button>
+      <input type="text" id="searchTokenId" placeholder="Enter Token ID" required>
+      <button type="submit">Search</button>
     </form>
     <div id="searchResult"></div>
   </div>
+  <div class="sendmail">
+    <h2><i class="fas fa-search"></i> Send email</h2>
+    <form id="emailForm">
 
+      <input type="email" id="to" name="to" placeholder="Email" required><br><br>
 
+      <input type="text" id="subject" name="subject" placeholder="Subject" required><br><br>
+
+      <input id="body" name="body" placeholder="Message" required></input><br><br>
+
+      <button type="submit">Send Email</button>
+    </form>
+  </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
